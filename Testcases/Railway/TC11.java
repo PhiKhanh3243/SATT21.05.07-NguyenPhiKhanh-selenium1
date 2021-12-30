@@ -36,5 +36,6 @@ public class TC11 extends TestBase{
         softAssert.assertEquals(actualMsgPassword,expectedMsgPassword,"Error message is not displayed as expected");
         softAssert.assertEquals(actualMsgCPassword,expectedMsgCPassword,"Error message is not displayed as expected");
         softAssert.assertEquals(actualMsgPID,expectedMsgPID,"Error message is not displayed as expected");
+        softAssert.assertAll();
     }
 }
