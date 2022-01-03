@@ -26,10 +26,9 @@ public class TC06 extends TestBase{
         loginPage.gotoLogout();
         String actualMsg = Constant.WEBDRIVER.getCurrentUrl();
         String expectedMsg = "http://www.railway.somee.com/Page/HomePage.cshtml";
-        SoftAssert sortAssert = new SoftAssert();
-        sortAssert.assertFalse(homePage.tabLogoutIsDisplays());
-        sortAssert.assertEquals(actualMsg,expectedMsg,"Error message is not displayed as expected");
-        sortAssert.assertAll();
+
+        Assert.assertFalse(homePage.tabLogoutIsDisplays());
+        Assert.assertEquals(actualMsg,expectedMsg,"Error message is not displayed as expected");
     }
 
 }

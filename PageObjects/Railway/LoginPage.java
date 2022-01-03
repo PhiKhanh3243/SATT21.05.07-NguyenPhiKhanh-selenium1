@@ -10,7 +10,7 @@ public class LoginPage extends GeneralPage {
 
     private final By loc_txtPassword = By.id("password");
 
-    private final By loc_btnLogin = By.xpath("//input[@value='login']");
+    private final By loc_btnLogin = By.xpath("//input[@type='submit' and @title='Login']");
 
     private final By loc_tabChangePassword = By.xpath("//a[@href='/Account/ChangePassword.cshtml']");
     // Elements
@@ -18,23 +18,23 @@ public class LoginPage extends GeneralPage {
         return Constant.WEBDRIVER.findElement(loc_txtUsername);
     }
 
-    public WebElement gettxtPassword(){
+    public WebElement getTxtPassword(){
         return Constant.WEBDRIVER.findElement(loc_txtPassword);
     }
 
-    public WebElement getbtnLogin(){
+    public WebElement getBtnLogin(){
         return Constant.WEBDRIVER.findElement(loc_btnLogin);
     }
 
-    public WebElement gettabChangePassword(){
+    public WebElement getTabChangePassword(){
         return Constant.WEBDRIVER.findElement(loc_tabChangePassword);
     }
 
     // methods
     public void login(String username, String password){
         this.getTxtUsername().sendKeys(username);
-        this.gettxtPassword().sendKeys(password);
-        this.getbtnLogin().click();
+        this.getTxtPassword().sendKeys(password);
+        this.getBtnLogin().click();
     }
     public void loginLoop(String username, String password, int n){
         for(int i = 0; i <= n; i++){
@@ -43,6 +43,6 @@ public class LoginPage extends GeneralPage {
     }
 
     public void gotoContact(){this.gettabContact().click();}
-    public void gotoChangePassword(){this.gettabChangePassword().click();}
+    public void gotoChangePassword(){this.getTabChangePassword().click();}
 }
 

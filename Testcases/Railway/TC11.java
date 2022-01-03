@@ -1,11 +1,10 @@
 package Railway;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-
-import java.util.concurrent.TimeUnit;
 import Constant.Constant;
+import java.util.concurrent.TimeUnit;
 public class TC11 extends TestBase{
     @Test
     public void TC11()
@@ -32,10 +31,10 @@ public class TC11 extends TestBase{
         String actualMsgPID = registerPage.getPIDErrorMessage();
         String expectedMsgPID = "Invalid ID length.";
 
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualMsgPassword,expectedMsgPassword,"Error message is not displayed as expected");
-        softAssert.assertEquals(actualMsgCPassword,expectedMsgCPassword,"Error message is not displayed as expected");
-        softAssert.assertEquals(actualMsgPID,expectedMsgPID,"Error message is not displayed as expected");
-        softAssert.assertAll();
+
+        Assert.assertEquals(actualMsgPassword,expectedMsgPassword,"Error message is not displayed as expected");
+        Assert.assertEquals(actualMsgCPassword,expectedMsgCPassword,"Error message is not displayed as expected");
+        Assert.assertEquals(actualMsgPID,expectedMsgPID,"Error message is not displayed as expected");
+
     }
 }

@@ -30,32 +30,29 @@ public class RegisterPage extends GeneralPage{
     private final By loc_lblPIDErrorMessage = By.xpath("//li//label[@for='pid' and @class='validation-error']");
 
     // Elements
-    public WebElement gettxtEmail(){
+    public WebElement getTxtEmail(){
         return Constant.WEBDRIVER.findElement(loc_txtEmail);
     }
 
-    public WebElement gettxtPassword(){
+    public WebElement getTxtPassword(){
         return Constant.WEBDRIVER.findElement(loc_txtPassword);
     }
 
-    public WebElement gettxtConfirmPassword(){return Constant.WEBDRIVER.findElement(loc_txtConfirmPassword);}
+    public WebElement getTxtConfirmPassword(){return Constant.WEBDRIVER.findElement(loc_txtConfirmPassword);}
 
-    public WebElement gettxtPID(){
+    public WebElement getTxtPID(){
         return Constant.WEBDRIVER.findElement(loc_txtPID);
     }
 
-    public WebElement getbtnRegister(){
+    public WebElement getBtnRegister(){
         return Constant.WEBDRIVER.findElement(loc_btnRegister);
     }
 
-    public WebElement getlblRegisterSuccess(){
+    public WebElement getLblRegisterSuccess(){
         return Constant.WEBDRIVER.findElement(loc_lblRegisterSuccess);
     }
 
-    public WebElement getlblregisterMessageError(){return Constant.WEBDRIVER.findElement(loc_lblregisterMessageError);}
-
-
-
+    public WebElement getLblregisterMessageError(){return Constant.WEBDRIVER.findElement(loc_lblregisterMessageError);}
 
     public WebElement getlblPasswordErrorMessage(){return Constant.WEBDRIVER.findElement(loc_lblPasswordErrorMessage);}
 
@@ -66,19 +63,19 @@ public class RegisterPage extends GeneralPage{
     //methods
 
     public void register (String email, String password,String confirmpassword, String pid){
-        this.gettxtEmail().sendKeys(email);
-        this.gettxtPassword().sendKeys(password);
-        this.gettxtConfirmPassword().sendKeys(confirmpassword);
-        this.gettxtPID().sendKeys(pid);
+        this.getTxtEmail().sendKeys(email);
+        this.getTxtPassword().sendKeys(password);
+        this.getTxtConfirmPassword().sendKeys(confirmpassword);
+        this.getTxtPID().sendKeys(pid);
         WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, 10);
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(getbtnRegister()));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(getBtnRegister()));
         element.click();
     }
     public String getRegisterMessage(){
-        return this.getlblRegisterSuccess().getText();
+        return this.getLblRegisterSuccess().getText();
     }
     public String getRegisterMessageError(){
-        return this.getlblregisterMessageError().getText();
+        return this.getLblregisterMessageError().getText();
     }
     public String getPasswordErrorMessage(){
         return getlblPasswordErrorMessage().getText();
