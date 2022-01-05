@@ -28,70 +28,91 @@ public class GeneralPage {
 
     private final By loc_tabMyTicket = By.xpath("//a[@href='/Page/ManageTicket.cshtml']");
 
-    private final By loc_lnkCheckPrice = setLocCheckPrice("Đà Nẵng","Sài Gòn");
+    private final By loc_lnkCheckPrice = setLocCheckPrice("Đà Nẵng", "Sài Gòn");
+
     // Elements
-    protected WebElement getTablogin(){
+    protected WebElement getTablogin() {
         return Constant.WEBDRIVER.findElement(loc_tabLogin);
     }
 
-    protected WebElement getTablogout(){
+    protected WebElement getTablogout() {
         return Constant.WEBDRIVER.findElement(loc_tabLogout);
     }
 
-    protected WebElement getlblWelcomeMessage(){return Constant.WEBDRIVER.findElement(loc_lblWelcomeMessage);}
+    protected WebElement getLblWelcomeMessage() {
+        return Constant.WEBDRIVER.findElement(loc_lblWelcomeMessage);
+    }
 
-    protected WebElement getlblErrorMessage(){return Constant.WEBDRIVER.findElement(loc_lblErrorMessage);}
+    protected WebElement getLblErrorMessage() {
+        return Constant.WEBDRIVER.findElement(loc_lblErrorMessage);
+    }
 
-    protected WebElement gettabBookTicket(){return Constant.WEBDRIVER.findElement(loc_tabBookticket);}
+    protected WebElement getTabBookTicket() {
+        return Constant.WEBDRIVER.findElement(loc_tabBookticket);
+    }
 
-    protected WebElement gettabContact(){return Constant.WEBDRIVER.findElement(loc_tabContact);}
+    protected WebElement getTabContact() {
+        return Constant.WEBDRIVER.findElement(loc_tabContact);
+    }
 
-    protected WebElement gettabRegister(){return Constant.WEBDRIVER.findElement(loc_tabRegister);}
+    protected WebElement getTabRegister() {
+        return Constant.WEBDRIVER.findElement(loc_tabRegister);
+    }
 
-    protected WebElement gettabTimeTable(){return Constant.WEBDRIVER.findElement(loc_tabTimeTable);}
+    protected WebElement getTabTimeTable() {
+        return Constant.WEBDRIVER.findElement(loc_tabTimeTable);
+    }
 
-    protected WebElement getTabMyTicket(){return Constant.WEBDRIVER.findElement(loc_tabMyTicket);}
-
+    protected WebElement getTabMyTicket() {
+        return Constant.WEBDRIVER.findElement(loc_tabMyTicket);
+    }
 
 
     // methods
 
-    public String getWelcomeMessage(){return this.getlblWelcomeMessage().getText();}
-
-    public String getErrorMessage(){return this.getlblErrorMessage().getText();}
-
-    public void gotoLoginPage(){this.getTablogin().click();}
-
-    public void gotoBookticket(){
-        this.gettabBookTicket().click();
+    public String getWelcomeMessage() {
+        return this.getLblWelcomeMessage().getText();
     }
 
-    public void gotoLogout(){
+    public String getErrorMessage() {
+        return this.getLblErrorMessage().getText();
+    }
+
+    public void gotoLoginPage() {
+        this.getTablogin().click();
+    }
+
+    public void gotoBookticket() {
+        this.getTabBookTicket().click();
+    }
+
+    public void gotoLogout() {
         this.getTablogout().click();
     }
 
-    public void gotoRegister(){
-        this.gettabRegister().click();
+    public void gotoRegister() {
+        this.getTabRegister().click();
     }
 
-    public void gotoTimeTable(){
-        this.gettabTimeTable().click();
+    public void gotoTimeTable() {
+        this.getTabTimeTable().click();
     }
 
-    public void gotoMyTicket(){
+    public void gotoMyTicket() {
         this.getTabMyTicket().click();
     }
 
-    public boolean tabLogoutIsDisplays(){
+    public boolean tabLogoutIsDisplays() {
         try {
             boolean isDisplayed = this.getTablogout().isDisplayed();
             return isDisplayed;
-        }catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             return false;
         }
     }
-    public By setLocCheckPrice (String Depart, String Arrive){
-        return By.xpath("//td[text()='"+ Depart +"']/following-sibling::td[text()='"+Arrive+"']/..//a[contains(@href, 'TicketPricePage.cshtml?id1=1&id2=2')]");
+
+    public By setLocCheckPrice(String Depart, String Arrive) {
+        return By.xpath("//td[text()='" + Depart + "']/following-sibling::td[text()='" + Arrive + "']/..//a[contains(@href, 'TicketPricePage.cshtml?id1=1&id2=2')]");
     }
 
 

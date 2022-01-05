@@ -10,9 +10,8 @@ import org.testng.asserts.SoftAssert;
 import Constant.Constant;
 
 public class TC06 extends TestBase{
-    @Test
+    @Test (description = "TC06 - User is redirected to Home page after logging out")
     public void TC06(){
-        System.out.println("TC06 - User is redirected to Home page after logging out");
         HomePage homePage = new HomePage();
         System.out.println("Step 1: Navigate to QA Railway Website");
         homePage.open();
@@ -24,8 +23,8 @@ public class TC06 extends TestBase{
         loginPage.gotoContact();
         System.out.println("Step 4: Click on Logout tab");
         loginPage.gotoLogout();
-        String actualMsg = Constant.WEBDRIVER.getCurrentUrl();
-        String expectedMsg = "http://www.railway.somee.com/Page/HomePage.cshtml";
+        String actualMsg = homePage.getTitleHomePage();
+        String expectedMsg = "Welcome to Safe Railway";
 
         Assert.assertFalse(homePage.tabLogoutIsDisplays());
         Assert.assertEquals(actualMsg,expectedMsg,"Error message is not displayed as expected");

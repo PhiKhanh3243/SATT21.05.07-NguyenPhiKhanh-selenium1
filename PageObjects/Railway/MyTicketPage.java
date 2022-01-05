@@ -9,9 +9,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MyTicketPage extends GeneralPage{
     //Locators
+
+    //dynamic locator
+    String linkCancelTicket = "//td[text()='%s']/following-sibling::td[text()='%s']/following-sibling::td[text()='%s']/..//input[@value='Cancel']";
+
     //Elements
     protected WebElement getBtnCancel(String noID,String depart, String arrive){
-        return Constant.WEBDRIVER.findElement(By.xpath("//td[text()='"+noID+"']/following-sibling::td[text()='"+depart+"']/following-sibling::td[text()='"+arrive+"']/..//input[@value='Cancel']"));
+        return Constant.WEBDRIVER.findElement(By.xpath(String.format(linkCancelTicket,noID,depart, arrive)));
     };
     //Methods
     public void cancelTicket(String noID,String depart,String arrive){

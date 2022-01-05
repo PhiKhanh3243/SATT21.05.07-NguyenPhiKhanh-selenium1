@@ -6,7 +6,7 @@ import Constant.Constant;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class RegisterPage extends GeneralPage{
+public class RegisterPage extends GeneralPage {
     //Locators
 
     private final By loc_txtEmail = By.id("email");
@@ -30,39 +30,49 @@ public class RegisterPage extends GeneralPage{
     private final By loc_lblPIDErrorMessage = By.xpath("//li//label[@for='pid' and @class='validation-error']");
 
     // Elements
-    public WebElement getTxtEmail(){
+    public WebElement getTxtEmail() {
         return Constant.WEBDRIVER.findElement(loc_txtEmail);
     }
 
-    public WebElement getTxtPassword(){
+    public WebElement getTxtPassword() {
         return Constant.WEBDRIVER.findElement(loc_txtPassword);
     }
 
-    public WebElement getTxtConfirmPassword(){return Constant.WEBDRIVER.findElement(loc_txtConfirmPassword);}
+    public WebElement getTxtConfirmPassword() {
+        return Constant.WEBDRIVER.findElement(loc_txtConfirmPassword);
+    }
 
-    public WebElement getTxtPID(){
+    public WebElement getTxtPID() {
         return Constant.WEBDRIVER.findElement(loc_txtPID);
     }
 
-    public WebElement getBtnRegister(){
+    public WebElement getBtnRegister() {
         return Constant.WEBDRIVER.findElement(loc_btnRegister);
     }
 
-    public WebElement getLblRegisterSuccess(){
+    public WebElement getLblRegisterSuccess() {
         return Constant.WEBDRIVER.findElement(loc_lblRegisterSuccess);
     }
 
-    public WebElement getLblregisterMessageError(){return Constant.WEBDRIVER.findElement(loc_lblregisterMessageError);}
+    public WebElement getLblregisterMessageError() {
+        return Constant.WEBDRIVER.findElement(loc_lblregisterMessageError);
+    }
 
-    public WebElement getlblPasswordErrorMessage(){return Constant.WEBDRIVER.findElement(loc_lblPasswordErrorMessage);}
+    public WebElement getLblPasswordErrorMessage() {
+        return Constant.WEBDRIVER.findElement(loc_lblPasswordErrorMessage);
+    }
 
-    public WebElement getlblConfirmPasswordErrorMessage(){return Constant.WEBDRIVER.findElement(loc_lblConfirmPasswordErrorMessage);}
+    public WebElement getLblConfirmPasswordErrorMessage() {
+        return Constant.WEBDRIVER.findElement(loc_lblConfirmPasswordErrorMessage);
+    }
 
-    public WebElement getlblPIDErrorMessage(){return Constant.WEBDRIVER.findElement(loc_lblPIDErrorMessage);}
+    public WebElement getLblPIDErrorMessage() {
+        return Constant.WEBDRIVER.findElement(loc_lblPIDErrorMessage);
+    }
 
     //methods
 
-    public void register (String email, String password,String confirmpassword, String pid){
+    public void register(String email, String password, String confirmpassword, String pid) {
         this.getTxtEmail().sendKeys(email);
         this.getTxtPassword().sendKeys(password);
         this.getTxtConfirmPassword().sendKeys(confirmpassword);
@@ -71,19 +81,24 @@ public class RegisterPage extends GeneralPage{
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(getBtnRegister()));
         element.click();
     }
-    public String getRegisterMessage(){
+
+    public String getRegisterMessage() {
         return this.getLblRegisterSuccess().getText();
     }
-    public String getRegisterMessageError(){
+
+    public String getRegisterMessageError() {
         return this.getLblregisterMessageError().getText();
     }
-    public String getPasswordErrorMessage(){
-        return getlblPasswordErrorMessage().getText();
+
+    public String getPasswordErrorMessage() {
+        return getLblPasswordErrorMessage().getText();
     }
-    public String getConfirmPasswordErrorMessage(){
-        return getlblConfirmPasswordErrorMessage().getText();
+
+    public String getConfirmPasswordErrorMessage() {
+        return getLblConfirmPasswordErrorMessage().getText();
     }
-    public String getPIDErrorMessage(){
-        return getlblPIDErrorMessage().getText();
+
+    public String getPIDErrorMessage() {
+        return getLblPIDErrorMessage().getText();
     }
 }

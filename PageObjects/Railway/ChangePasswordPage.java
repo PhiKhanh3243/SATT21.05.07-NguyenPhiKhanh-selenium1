@@ -3,7 +3,8 @@ package Railway;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import Constant.Constant;
-public class ChangePasswordPage extends GeneralPage{
+
+public class ChangePasswordPage extends GeneralPage {
     //locators
 
     private final By loc_txtCurrentPassword = By.id("currentPassword");
@@ -19,28 +20,36 @@ public class ChangePasswordPage extends GeneralPage{
 
     //elements
 
-    public WebElement gettxtCurrentPassword(){
+    public WebElement getTxtCurrentPassword() {
         return Constant.WEBDRIVER.findElement(loc_txtCurrentPassword);
     }
 
-    public WebElement gettxtNewPassword(){return Constant.WEBDRIVER.findElement(loc_txtNewPassword);}
+    public WebElement getTxtNewPassword() {
+        return Constant.WEBDRIVER.findElement(loc_txtNewPassword);
+    }
 
-    public WebElement gettxtconfirmPassword(){return Constant.WEBDRIVER.findElement(loc_txtConfirmPassword);}
+    public WebElement getTxtconfirmPassword() {
+        return Constant.WEBDRIVER.findElement(loc_txtConfirmPassword);
+    }
 
-    public WebElement getbtnChangePassword(){return Constant.WEBDRIVER.findElement(loc_btnChangePassword);}
+    public WebElement getbtnChangePassword() {
+        return Constant.WEBDRIVER.findElement(loc_btnChangePassword);
+    }
 
-    public WebElement getlblChangepasswordErrorMessage(){return Constant.WEBDRIVER.findElement(loc_lblChangepasswordErrorMessage);}
+    public WebElement getlblChangepasswordErrorMessage() {
+        return Constant.WEBDRIVER.findElement(loc_lblChangepasswordErrorMessage);
+    }
 
     //methods
 
-    public void changePassword(String password, String newpassword, String confirmpassword){
-        this.gettxtCurrentPassword().sendKeys(password);
-        this.gettxtNewPassword().sendKeys(newpassword);
-        this.gettxtconfirmPassword().sendKeys(confirmpassword);
+    public void changePassword(String password, String newpassword, String confirmpassword) {
+        this.getTxtCurrentPassword().sendKeys(password);
+        this.getTxtNewPassword().sendKeys(newpassword);
+        this.getTxtconfirmPassword().sendKeys(confirmpassword);
         this.getbtnChangePassword().click();
     }
 
-    public String getChangepaswwordErrorMessage(){
+    public String getChangepaswwordErrorMessage() {
         return getlblChangepasswordErrorMessage().getText();
     }
 
