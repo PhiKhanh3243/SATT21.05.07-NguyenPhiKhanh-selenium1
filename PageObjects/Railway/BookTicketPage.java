@@ -123,7 +123,6 @@ public class BookTicketPage extends GeneralPage {
         selectTicketAmount.selectByVisibleText(ticketAmount);
 
         Constant.WEBDRIVER.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
         try {
             Select selectArriveAt = new Select(this.getArriveAt());
             selectArriveAt.selectByVisibleText(arriveAt);
@@ -131,9 +130,9 @@ public class BookTicketPage extends GeneralPage {
             Select selectArriveAt = new Select(this.getArriveAt());
             selectArriveAt.selectByVisibleText(arriveAt);
         }
-        JavascriptExecutor jse = (JavascriptExecutor) Constant.WEBDRIVER;
         Constant.WEBDRIVER.manage().window().maximize();
-        jse.executeScript("scroll(0, 250)");
+        JavascriptExecutor jse = (JavascriptExecutor) Constant.WEBDRIVER;
+        jse.executeScript("arguments[0].scrollIntoView();",getLoc_BtnBookTicket());
         this.getLoc_BtnBookTicket().click();
         Constant.WEBDRIVER.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }

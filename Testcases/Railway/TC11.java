@@ -17,8 +17,7 @@ public class TC11 extends TestBase {
         RegisterPage registerPage = new RegisterPage();
         Constant.WEBDRIVER.manage().window().maximize();
 
-        JavascriptExecutor jse = (JavascriptExecutor) Constant.WEBDRIVER;
-        jse.executeScript("scroll(0, 250)");
+
 
         registerPage.register(Constant.USERNAME, "", "", "");
         Constant.WEBDRIVER.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);

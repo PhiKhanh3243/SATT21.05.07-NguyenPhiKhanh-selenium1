@@ -62,9 +62,8 @@ public class TimeTablePage extends GeneralPage {
     //Methods
     public void CheckPrice(String depart, String arrive) {
         WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, 10);
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(getLnkCheckPrice(depart, arrive)));
         JavascriptExecutor jse = (JavascriptExecutor) Constant.WEBDRIVER;
-        jse.executeScript("scroll(0, 250)");
+        jse.executeScript("arguments[0].scrollIntoView();", getLnkCheckPrice(depart, arrive));
         this.getLnkCheckPrice(depart, arrive).click();
     }
 

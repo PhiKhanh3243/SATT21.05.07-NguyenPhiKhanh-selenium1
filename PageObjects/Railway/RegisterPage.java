@@ -1,6 +1,7 @@
 package Railway;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import Constant.Constant;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -77,9 +78,9 @@ public class RegisterPage extends GeneralPage {
         this.getTxtPassword().sendKeys(password);
         this.getTxtConfirmPassword().sendKeys(confirmpassword);
         this.getTxtPID().sendKeys(pid);
-        WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, 10);
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(getBtnRegister()));
-        element.click();
+        JavascriptExecutor jse = (JavascriptExecutor) Constant.WEBDRIVER;
+        jse.executeScript("arguments[0].scrollIntoView();",getBtnRegister());
+        this.getBtnRegister().click();
     }
 
     public String getRegisterMessage() {

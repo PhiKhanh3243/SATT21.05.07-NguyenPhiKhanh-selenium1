@@ -16,12 +16,7 @@ public class TC10 extends TestBase {
         homePage.gotoRegister();
         RegisterPage registerPage = new RegisterPage();
         Constant.WEBDRIVER.manage().window().maximize();
-
-        JavascriptExecutor jse = (JavascriptExecutor) Constant.WEBDRIVER;
-        jse.executeScript("scroll(0, 250)");
-
         registerPage.register(Constant.USERNAME, Constant.PASSWORD, Constant.PASSWORD, Constant.PID);
-        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
         String actualMsg = registerPage.getRegisterMessageError();
         String expectedMsg = "This email address is already in use.";
         Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected");

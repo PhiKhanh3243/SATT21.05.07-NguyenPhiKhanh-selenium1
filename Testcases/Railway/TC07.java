@@ -17,8 +17,6 @@ public class TC07 extends TestBase {
         homePage.gotoRegister();
         RegisterPage registerPage = new RegisterPage();
         Constant.WEBDRIVER.manage().window().maximize();
-        JavascriptExecutor jse = (JavascriptExecutor) Constant.WEBDRIVER;
-        jse.executeScript("scroll(0, 250)");
         String emailString = randomEmail(10);
         registerPage.register(emailString, Constant.PASSWORD, Constant.PASSWORD, Constant.PID);
         Constant.WEBDRIVER.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
