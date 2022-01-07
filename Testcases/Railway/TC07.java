@@ -22,7 +22,7 @@ public class TC07 extends TestBase {
         Constant.WEBDRIVER.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
         String actualMsg = registerPage.getRegisterMessage();
         String expectedMsg = "Registration Confirmed! You can now log in to the site.";
-        Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected");
+        Assert.assertEquals(actualMsg, expectedMsg, "Message is not displayed as expected");
     }
 
     public String randomEmail(int amountOfChar) {

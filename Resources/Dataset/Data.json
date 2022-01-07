@@ -17,5 +17,12 @@
     "arriveAt2": "Sài Gòn",
     "seatType2": "Soft seat with air conditioner",
     "ticketAmount2": "1"
+  },
+  "FTTC701": {
+    "departDate": "1/14/2022",
+    "departFrom": "Nha Trang",
+    "arriveAt": "Huế",
+    "seatType": "Soft seat",
+    "ticketAmount": "2"
   }
 }

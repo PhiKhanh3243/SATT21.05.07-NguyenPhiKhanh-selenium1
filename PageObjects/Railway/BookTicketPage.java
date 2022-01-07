@@ -107,22 +107,19 @@ public class BookTicketPage extends GeneralPage {
         Select selectDepartDate = new Select(this.getDepartDate());
         selectDepartDate.selectByVisibleText(departDate);
 
-        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
         Select selectDepartFrom = new Select(this.getDepartFrom());
         selectDepartFrom.selectByVisibleText(departFrom);
 
-        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         Select selectSeatType = new Select(this.getSeatType());
         selectSeatType.selectByVisibleText(seatType);
 
-        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         Select selectTicketAmount = new Select(this.getTicketAmount());
         selectTicketAmount.selectByVisibleText(ticketAmount);
 
         Constant.WEBDRIVER.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
         try {
             Select selectArriveAt = new Select(this.getArriveAt());
             selectArriveAt.selectByVisibleText(arriveAt);
@@ -134,8 +131,15 @@ public class BookTicketPage extends GeneralPage {
         JavascriptExecutor jse = (JavascriptExecutor) Constant.WEBDRIVER;
         jse.executeScript("arguments[0].scrollIntoView();",getLoc_BtnBookTicket());
         this.getLoc_BtnBookTicket().click();
-        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
+    public void bookTicketWithAmount(String ticketAmount){
+        Select selectTicketAmount = new Select(this.getTicketAmount());
+        selectTicketAmount.selectByVisibleText(ticketAmount);
+        JavascriptExecutor jse = (JavascriptExecutor) Constant.WEBDRIVER;
+        jse.executeScript("arguments[0].scrollIntoView();",getLoc_BtnBookTicket());
+        this.getLoc_BtnBookTicket().click();
+    }
+
 
     public String getLblSuccessMessage() {
         return getLoc_LblSuccess().getText();

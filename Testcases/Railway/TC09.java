@@ -17,6 +17,6 @@ public class TC09 extends TestBase {
         changePasswordPage.changePassword(Constant.PASSWORD, "a123:\"/{}!@$\\", "b456:\"/{}!@$\\");
         String actualMsg = changePasswordPage.getChangepaswwordErrorMessage();
         String expectedMsg = "Password change failed. Please correct the errors and try again.";
-        Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected");
+        Assert.assertEquals(actualMsg, expectedMsg, "Message is not displayed as expected");
     }
 }

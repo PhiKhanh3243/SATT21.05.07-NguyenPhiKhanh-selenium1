@@ -17,10 +17,7 @@ public class TC11 extends TestBase {
         RegisterPage registerPage = new RegisterPage();
         Constant.WEBDRIVER.manage().window().maximize();
 
-
-
         registerPage.register(Constant.USERNAME, "", "", "");
-        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
 
         String actualMsgPassword = registerPage.getRegisterMessageError();
         String expectedMsgPassword = "There're errors in the form. Please correct the errors and try again.";

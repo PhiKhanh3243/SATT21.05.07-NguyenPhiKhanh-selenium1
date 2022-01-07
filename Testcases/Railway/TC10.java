@@ -19,6 +19,6 @@ public class TC10 extends TestBase {
         registerPage.register(Constant.USERNAME, Constant.PASSWORD, Constant.PASSWORD, Constant.PID);
         String actualMsg = registerPage.getRegisterMessageError();
         String expectedMsg = "This email address is already in use.";
-        Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected");
+        Assert.assertEquals(actualMsg, expectedMsg, "Message is not displayed as expected");
     }
 }

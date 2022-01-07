@@ -28,7 +28,7 @@ public class GeneralPage {
 
     private final By loc_tabMyTicket = By.xpath("//a[@href='/Page/ManageTicket.cshtml']");
 
-    private final By loc_lnkCheckPrice = setLocCheckPrice("Đà Nẵng", "Sài Gòn");
+    private final By loc_tabTicketPrice = By.xpath("//a[@href='/Page/TrainPriceListPage.cshtml']");
 
     // Elements
     protected WebElement getTablogin() {
@@ -67,6 +67,10 @@ public class GeneralPage {
         return Constant.WEBDRIVER.findElement(loc_tabMyTicket);
     }
 
+    protected WebElement getTabTicketPrice() {
+        return Constant.WEBDRIVER.findElement(loc_tabTicketPrice);
+    }
+
 
     // methods
 
@@ -96,6 +100,10 @@ public class GeneralPage {
 
     public void gotoTimeTable() {
         this.getTabTimeTable().click();
+    }
+
+    public void gotoTicketPrice() {
+        this.getTabTicketPrice().click();
     }
 
     public void gotoMyTicket() {

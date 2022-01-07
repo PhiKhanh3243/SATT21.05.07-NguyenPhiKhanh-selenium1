@@ -27,7 +27,7 @@ public class TC06 extends TestBase{
         String expectedMsg = "Welcome to Safe Railway";
 
         Assert.assertFalse(homePage.tabLogoutIsDisplays());
-        Assert.assertEquals(actualMsg,expectedMsg,"Error message is not displayed as expected");
+        Assert.assertEquals(actualMsg,expectedMsg,"Message is not displayed as expected");
     }
 
 }
